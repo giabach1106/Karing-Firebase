@@ -5,97 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karing</title>
-
-    <!-- API -->
-    <script type="module">
-      var getUrlParameter = function getUrlParameter(sParam) {
-   var sPageURL = window.location.search.substring(1),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-       }
-   }
-   return false;
-};
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-       }
-   }
-   return false;
-};
-    const firebaseConfig = {
-        apiKey: "AIzaSyC4mFlIik7OqrJlOsHvrZyito-WhF4tPtk",
-        authDomain: "karing-a8b53.firebaseapp.com",
-        projectId: "karing-a8b53",
-        storageBucket: "karing-a8b53.appspot.com",
-        messagingSenderId: "284699594166",
-        appId: "1:284699594166:web:fcaaf6bdad63e5b6478517",
-        measurementId: "G-RJVQ3K3R44",
-        databaseURL: "https://karing-a8b53-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-
-    const db = getDatabase();
-    const aricleRef = ref(db, 'dt');
-
-    onValue(aricleRef, (snapshot) => {
-    const articles = snapshot.val();
-    for (var article in articles) {
-      $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
-      if(articles[article].ava){
-          $("#article").append("<br><img src = '"+articles[article].ava+"'>")
-      }
-
-      $("#article").append("<hr>")
-    }
-    $("#loading").hide()
-    });
-
-    let id = getUrlParameter("id")
-   const aricleRef2 = ref(db, 'db/'+id);
-   onValue(aricleRef2, (snapshot) => {
-     const article = snapshot.val();
-      $("#article").append(article.name + "<br>" + article.dob+ "<br>" + article.sex)
-       if(article.ava){
-           $("#article").append("<br><img src = '"+article.ava+"'>")
-       }
-
-     $("#loading").hide()
-   });
-
-
-
-      // $("#name").text(dt.name)
-      // $("#dob").text(pt.dob)
-      // $("#sex").text(pt.sex)
-    </script>
+    <link rel="stylesheet" href="style.css">
+    
 
 </head>
 <body>
@@ -103,9 +14,8 @@
  <div id="loading">Loading...</div>
  <div id="article"></div>
 
-  <h1 id="name"></h1>
-  <h2 id ="dob"></h2>
-  <p id="sex"></p>
+
+  <script src="main.js" type="module" ></script>
   <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 </body>
 </html>
