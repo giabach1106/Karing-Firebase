@@ -33,12 +33,17 @@
     const analytics = getAnalytics(app);
 
     const db = getDatabase();
-       const titleRef = ref(db, 'pt/01');
-       onValue(titleRef, (snapshot) => {
-         const data = snapshot.val();
-         console.log(data);
-         
-       });
+    const aricleRef = ref(db, 'dt');
+    
+    onValue(aricleRef, (snapshot) => {
+    const articles = snapshot.val();
+    for (var article in articles) {
+      $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
+      $("#article").append("<hr>")
+    }
+    $("#loading").hide()
+    });
+
       $("#name").text(pt.name)
       $("#dob").text(pt.dob)
       $("#sex").text(pt.sex)
@@ -46,8 +51,10 @@
 
 </head>
 <body>
+  
+ <div id="loading">Loading...</div>
+ <div id="article"></div>
 
-  asdads
   <h1 id="name"></h1>
   <h2 id ="dob"></h2>
   <p id="sex"></p>
