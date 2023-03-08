@@ -70,15 +70,41 @@ $("#loading").hide()
 });
 
 let id = getUrlParameter("id")
-const aricleRef2 = ref(db, 'db/'+id);
-onValue(aricleRef2, (snapshot) => {
-const article = snapshot.val();
-$("#article").append(article.name + "<br>" + article.dob+ "<br>" + article.sex)
- if(article.ava){
-     $("#article").append("<br><img src = '"+article.ava+"'>")
- }
+console.log(id);
+// const aricleRef2 = ref(db, 'db/'+'pt');
+// console.log(aricleRef2);
 
-$("#loading").hide()
-});
+
+let x = ['dt', 'pt'];
+console.log(x);
+for (let i=0;i<2;i++){
+    let id = x[i];
+    console.log(id);
+    const aricleRef2 = ref(db, 'db/'+ id);
+    onValue(aricleRef2, (snapshot) => {
+        const articles = snapshot.val();
+        for (var article in articles) {
+        $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
+        if(articles[article].ava){
+            $("#article").append("<br><img src = '"+articles[article].ava+"'>")
+        }
+        
+        $("#article").append("<hr>")
+        }
+        $("#loading").hide()
+        });
+}
+
+
+
+// onValue(aricleRef2, (snapshot) => {
+// const article = snapshot.val();
+// $("#article").append(article.name + "<br>" + article.dob+ "<br>" + article.sex)
+//  if(article.ava){
+//      $("#article").append("<br><img src = '"+article.ava+"'>")
+//  }
+
+// $("#loading").hide()
+// });
 
 
