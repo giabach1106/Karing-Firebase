@@ -56,21 +56,24 @@ const analytics = getAnalytics(app);
 const db = getDatabase();
 const aricleRef = ref(db, 'dt');
 
-onValue(aricleRef, (snapshot) => {
-const articles = snapshot.val();
-for (var article in articles) {
-$("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
-if(articles[article].ava){
-    $("#article").append("<br><img src = '"+articles[article].ava+"'>")
-}
+// onValue(aricleRef, (snapshot) => {
+// const articles = snapshot.val();
+// for (var article in articles) {
+// $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
+// if(articles[article].ava){
+//     $("#article").append("<br><img src = '"+articles[article].ava+"'>")
+// }
 
-$("#article").append("<hr>")
-}
-$("#loading").hide()
-});
+// $("#article").append("<hr>")
+// }
+// $("#loading").hide()
+// });
+
+
+
+
 
 let id = getUrlParameter("id")
-console.log(id);
 // const aricleRef2 = ref(db, 'db/'+'pt');
 // console.log(aricleRef2);
 
@@ -79,15 +82,16 @@ let x = ['dt', 'pt'];
 console.log(x);
 for (let i=0;i<2;i++){
     let id = x[i];
-    console.log(id);
     const aricleRef2 = ref(db, 'db/'+ id);
     onValue(aricleRef2, (snapshot) => {
         const articles = snapshot.val();
         for (var article in articles) {
         $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
-        if(articles[article].ava){
-            $("#article").append("<br><img src = '"+articles[article].ava+"'>")
+        if(articles[article].image){
+            $("#article").append("<br><img src = '"+articles[article].image+"'>")
         }
+        console.log(articles['03']['dob']);
+        console.log(articles['03']['name']);
         
         $("#article").append("<hr>")
         }
