@@ -5,17 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karing</title>
-    <link rel="stylesheet" href="style.css">
-    
-
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <h1>Thong tin chi tiet</h1>
+  <!-- <h1>Thong tin chi tiet</h1>
  <div id="loading">Loading...</div>
- <div id="article"></div>
+ <div id="article"></div> -->
+ <!-- Navigation bar -->
+ <nav class="navbar navbar-expand-sm navbar-light">
+  <div class="container">
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item" target="nav-item">
+                  <a class="nav-link" href="#" aria-current="page">Trang chu</a><span
+                      class="visually-hidden">(current)</span></a>
+              </li>
+              <li class="nav-item" target="nav-item">
+                  <a class="nav-link" href="#">Tim benh nhan</a>
+              </li>
+              <li class="nav-item" target="nav-item">
+                  <a class="nav-link" href="#">Lien he</a>
+              </li>
+              <li class="nav-item" target="nav-item">
+                  <a class="nav-link" href="#">Tim nguoi cham soc</a>
+              </li>
+              <li class="nav-item" target="nav-item">
+                  <a class="nav-link" href="#">Tu van</a>
+              </li>
+              <li class="nav-item" id="login_button">
+                  <a class="nav-link" href="#" id="login">Dang nhap</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<!--Section-->
+<div class="row justify-content-center align-items-center g-2 mt-5" id="row_container">
+  <div class="col-sm-4">
+      <!-- filter -->
+      <div class="container" target="find_patient">
+          <h4 class="text-center" style="padding-top: 4%;">BỘ LỌC TÌM KIẾM</h4>
+          <form>
+              <div class="mb-3 row">
+                  <label for="inputName" class="col-4 col-form-label">Dia chi</label>
+                  <div class="col-8 pt-2">
+                      <input type="text" class="form-control" id="inputName">
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <label for="hourly_salary" class="form-label">Mức lương trả(giờ)</label>
+                  <div class="col-sm-6">
+                      <p4>Từ</p4>
+                      <input type="text" class="form-control" name="hourly_salary" id="hourly_salary">
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-6">
+                      <p4>Đến</p4>
+                      <input type="text" class="form-control" name="hourly_salary" id="hourly_salary">
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-6">
+                      <label for="from_age" class="form-label">Độ tuổi từ</label>
+                      <input type="text" class="form-control" id="from_age">
+                      <label for="to_age" class="form-label">Đến</label>
+                      <input type="text" class="form-control" id="to_age">
+                  </div>
+                  <div class="col-sm-6">
+                      <label for="from_required_age" class="form-label">Độ tuổi yêu cầu từ</label>
+                      <input type="text" class="form-control" id="from_required_age">
+                      <label for="to_required_age" class="form-label">Đến</label>
+                      <input type="text" class="form-control" id="to_required_age">
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-6">
+                      <label for="sex" class="form-label">Giới tính</label>
+                  </div>
+                  <div class="col-sm-6">
+                      <select id="sex" name="sex">
+                          <option value="Nam">Nam</option>
+                          <option value="Nữ">Nữ</option>
+                          <option value="Khác">Khác</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-6">
+                      <label for="sex" class="form-label">Giới tính yêu cầu</label>
+                  </div>
+                  <div class="col-sm-6">
+                      <select id="sex" name="sex">
+                          <option value="Nam">Nam</option>
+                          <option value="Nữ">Nữ</option>
+                          <option value="Khác">Khác</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="mb-3 row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-8"><button type="button" class="btn btn-lg mx-auto rounded-pill" onclick="NameFunction()">Submit</button></div>
+                  <div class="col-sm-2"></div>
+              </div> 
+          </form>
+      </div>
+  </div>
+  <!-- patients' information -->
+  <div class="col-sm-8">
+      <div class="container">
+          <div class="card">
+              <div class="row no-gutters">
+                  <div class="col-sm-3">
+                      <!-- <img class="card-img rounded-circle" src="/image/patient1.jpg" alt="shiina"> -->
+                  </div>
+                  <div class="col-sm-9">
+                      <div class="card-body">
+                          <h5 class="card-title">Suresh Dasari</h5>
+                          <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p>
+                          <a href="#" class="btn btn-primary">View Profile</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
+</div>
 
-  <script src="main.js" type="module" ></script>
+  <script src="/public/js/main.js" type="module" ></script>
   <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 </body>
 </html>

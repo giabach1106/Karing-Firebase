@@ -1,0 +1,97 @@
+body {
+    background: rgba(243, 243, 252, 1);
+}
+
+.navbar-nav{
+    margin-left: 20%;
+}
+
+.navbar-nav>li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav-item {
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link {
+    color: rgba(64, 64, 64, 1);
+    font-family: Open Sans;
+    font-weight: Regular;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: rgba(68, 97, 242, 1);
+}
+
+.nav-item[target="nav-item"]:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(68, 97, 242, 1);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-item[target="nav-item"]:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+}
+
+#login_button {
+    width: fit-content;
+    height: fit-content;
+    background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
+    opacity: 1;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+    overflow: hidden;
+}
+
+#login {
+    color: rgb(255, 255, 255);
+    font-family: Open Sans;
+    font-weight: ExtraBold;
+    font-size: large;
+    opacity: 1;
+    text-align: left;
+}
+
+#row_container {
+    margin-left: 7%;
+    color: #4461F2;
+    font-family: Inter;
+    font-weight: Bold;
+}
+
+#row_container .container[target="find_patient"] {
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+
+}
+
+
+
+#row_container button{
+    display: block;
+    margin-bottom: 20%;
+    width: max-content;
+    background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
+    color: white;
+}
+
+#row_container img{
+    border-radius: 100%;
+    
+}
