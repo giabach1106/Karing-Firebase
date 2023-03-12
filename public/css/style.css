@@ -45,6 +45,9 @@ body {
     transform-origin: bottom left;
 
 }
+#maungu{
+    color: white;
+}
 #login_button {
     width: fit-content;
     height: fit-content;
@@ -92,6 +95,6 @@ body {
 
 #row_container img{
     border-radius: 100%;
-    width: 235px;
-    height: 351px;
+    width: 236px;
+    height: 341px;
 }

@@ -69,16 +69,16 @@ for (let i=0;i<2;i++){
     onValue(aricleRef2, (snapshot) => {
         const articles = snapshot.val();
         for (var article in articles) {
-        $("#article").append("<a href='dt.html?id="+article+"'>" + articles[article].name + "<br>" + articles[article].dob + "<a>")
+        $("#article").append(articles[article].name + "<br>" + articles[article].dob)
         if(articles[article].image){
             $("#article").append("<br><img src = '"+articles[article].image+"'>")
         }
+        $("#article").append("<a style ='color:white;text-decoration:none' href='dt.html?id="+article+"'>"+"<div class = 'card-body'>"+"<div class = 'btn btn-primary'>"+ "View Profile" +"<a>")
         $("#article").append("<hr>")
         }
         $("#loading").hide()
         });
 }
-
 // onValue(aricleRef, (snapshot) => {
 // const articles = snapshot.val();
 // for (var article in articles) {
