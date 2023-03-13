@@ -126,7 +126,7 @@ onValue(aricleRef, (snapshot) => {
         if(articles[article].sex == "Nữ")
             articles[article].name = "Bà "+articles[article].name;
         
-        $("#article").append("<div class='patient-info'>"+"<img src = '"+articles[article].image+"'>"+"<div class='info'>" + "<a href='pt.html?id="+article+"'>"+"<h3>" + articles[article].name + "</h3></a>"+"<div class='ttll'> <div class='locate'> <img src='/public/image/locate.svg' alt=''>" + "<h5>"+articles[article].place +"</h5>" + "</div>" + "<div class='line3'> <div class='age'> <h5 class='dark'>Tuổi:</h5>"+ "<h5>"+ articles[article].age +"</h5>"+"</div><div class='gender'><h5 class='dark'>Giới tính:</h5>"+ "<h5>"+articles[article].sex +"</h5></div></div></div></div>")
+        $("#article").append("<div class='patient-info'>"+"<img src = '"+articles[article].image+"'>"+"<div class='info'>" + "<a href='pt.html?id="+article+"'>"+"<h3>" + articles[article].name + "</h3></a>"+"<div class='ttll'> <div class='locate'> <img src='image/locate.svg' alt=''>" + "<h5>"+articles[article].place +"</h5>" + "</div>" + "<div class='line3'> <div class='age'> <h5 class='dark'>Tuổi:</h5>"+ "<h5>"+ articles[article].age +"</h5>"+"</div><div class='gender'><h5 class='dark'>Giới tính:</h5>"+ "<h5>"+articles[article].sex +"</h5></div></div></div></div>")
     }
   
   
