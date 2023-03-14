@@ -103,7 +103,30 @@ let id = getUrlParameter("id")
 
 //   $("#loading").hide()
 // });
+const aricleRef1 = ref(db, 'aricles');
+   onValue(aricleRef1, (snapshot) => {
+     const articles = snapshot.val();
+     for (var article in articles) {
+      $("#news").append("<div class='article'>  <div class='inf'>  <div class='heading'>"+
+		  "<a href='article.html?id="+article+"'><h3>"+articles[article].title+"</h3></a>"+
+		   "</div><div class='intro'><p>Tác giả: "+articles[article].author+"</p> </div> </div>"+
+		    "<img src='"+articles[article].image+"' alt = ''> </div>")
 
+      $("#news").append("<hr>")
+     }
+     $("#loading").hide()
+   });
+
+const aricleRef2 = ref(db, 'aricles/'+id);
+   onValue(aricleRef2, (snapshot) => {
+     const article = snapshot.val();
+      $("#news-ChiTiet").append(article.title + "<br>" + article.author+ "<br>" + article.content)
+       if(article.image){
+           $("#news-ChiTiet").append("<br><img src = '"+article.image+"'>")
+       }
+
+     $("#loading").hide()
+   });
 
 onValue(aricleRef, (snapshot) => {
     const articles = snapshot.val();
