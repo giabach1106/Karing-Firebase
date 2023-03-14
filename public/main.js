@@ -18,6 +18,7 @@ return false;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getAuth,  createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -79,20 +80,6 @@ let id = getUrlParameter("id")
 //         $("#loading").hide()
 //         });
 // }
-
-// onValue(aricleRef, (snapshot) => {
-// const articles = snapshot.val();
-// for (var article in articles) {
-// $("#article").append(articles[article].name + "<br>" + articles[article].sex)
-// if(articles[article].image){
-//     $("#article").append("<br><img src = '"+articles[article].image+"'>")
-// }
-// $("#article").append("<hr>")
-// }
-// $("#loading").hide()
-// });
-
-
 // onValue(aricleRef, (snapshot) => {
 //   const articles = snapshot.val();
 //   for (var article in articles) {
@@ -144,3 +131,65 @@ onValue(aricleRef, (snapshot) => {
 // });
 
 
+const auth = getAuth(app);
+$("#btnSignUp").click(function(){
+    createUserWithEmailAndPassword(auth, $("#email").val(), $("#password").val())
+    .then((userCredential) => {
+      $("#signUpForm").hide();
+      const user = userCredential.user;
+      $("#heading").text("Xin chao ban: " + user.uid)
+     
+    })
+    .catch((error) => {
+      $("#heading").text(error)
+    });
+   
+   })
+
+   onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      $("#heading").css("display","block")
+      $("#heading").html("Xin chao ban: " + user.uid)
+      $("#signInform").css("display","none")
+      $("#btnSignOut").css("display","block")
+     
+     
+      // ...
+    } else {
+      $("#signInform").css("display","block")
+    }
+   });
+   
+   $("#btnSignOut").click(function(){
+   
+      signOut(auth).then(() => {
+              $("#signInform").css("display","block")
+              $("#heading").html("Đăng nhập")
+              $("#btnSignOut").css("display","none")
+          }).catch((error) => {
+          // An error happened.
+          });
+   
+   })
+   
+
+   $("#SignIn").click(function(){
+    signInWithEmailAndPassword(auth,$("#email").val(), $("#password").val())
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      $("#heading").text("Xin chao ban: " + user.uid)
+   
+      $("#signInform").hide();
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      $("#heading").text(error.message)
+    });
+   
+   })
