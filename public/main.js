@@ -160,7 +160,7 @@ $("#btnSignUp").click(function(){
     .then((userCredential) => {
       $("#signUpForm").hide();
       const user = userCredential.user;
-      $("#heading").text("Xin chao ban: " + user.uid)
+      $("#heading").append("<h3>Ban da dang ki thanh cong</h3>"+"<a href='index.html'>Quay ve trang chu </a>")
      
     })
     .catch((error) => {
