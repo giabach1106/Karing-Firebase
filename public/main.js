@@ -128,6 +128,18 @@ const aricleRef2 = ref(db, 'aricles/'+id);
      $("#loading").hide()
    });
 
+   const aricleRef3 = ref(db, 'db/pt/'+id);
+   onValue(aricleRef3, (snapshot) => {
+     const article = snapshot.val();
+      $("#pt-ChiTiet").append(article.name + "<br>" + article.place+ "<br>" + article.age)
+       if(article.image){
+           $("#pt-ChiTiet").append("<br><img src = '"+article.image+"'>")
+       }
+
+     $("#loading").hide()
+   });
+
+
 onValue(aricleRef, (snapshot) => {
     const articles = snapshot.val();
     for (var article in articles) {
