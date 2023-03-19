@@ -20,8 +20,8 @@
     <header>
         <div class="wrapper">
             <nav>
-                <div class="logo">Karing</div>
-
+                <a href="index.html"><div class="logo">Chăm Sóc Đột Quỵ - Karing.</div></a>
+                
                 <ul>
                     <li>
                         <a href="index.html">Trang Chủ</a>
@@ -40,13 +40,128 @@
                     </li>
 
                     <li>
-                        <a href="contact.html">Liên Hệ</a>
+                        <button onclick="document.getElementById('id02').style.display='block'"class="btn none">Liên Hệ</button>
+
+                        <div id="id02" class="modal ver22">
+                            
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content ver2 animate" action="#"> 
+                                <div class="popup2">
+                                    <h1>Liên hệ chúng tôi</h1>
+                                    <div class="regis">
+                                        <ul>
+                                            <li>
+                                                <img src="image/Email.svg" alt="">
+                                                chamsoc@nguoibenh.com.vn
+                                            </li>
+                                            
+                                            <li>
+                                                <img src="image/Phone.svg" alt="">
+                                                0983471417
+                                            </li>
+                        
+                                            <li>
+                                                <img src="image/locate.svg" alt="">
+                                                208 Giải Phóng, Hai Bà Trưng, Hà Nội
+                                            </li>
+                                        </ul>
+
+                                        <div class="social">
+                                            <a href="#"><img src="image/facebook.png" alt=""></a>
+                                            <a href="#"><img src="image/Twitter.png" alt=""></a>
+                                            <a href="#"><img src="image/Instagram.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Hủy</button>
+                                </div>
+                            </form>
+                        </div>
                     </li>
 
                     <li>
-                        <a href="login.html" class="btn dark">Đăng Nhập</a>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="btn dark">Đăng nhập</button>
+
+                        <div id="id01" class="modal">
+                            
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content animate" action="#"> 
+                                <div class="popup">
+                                    <h1>Đăng Nhập</h1>
+                                    <div class="container">
+                                        <div class="type">
+                                            <div class="gmail">
+                                                <input type="text" placeholder="Nhập gmail" required>
+                                            </div>
+                                            <div class="psw">
+                                                <input type="password" placeholder="Nhập mật khẩu" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="l3">
+                                            <a href="#"><span>Quên mật khẩu?</span></a>
+
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tôi
+                                            </label>
+                                        </div>
+
+                                        <div class="login">
+                                            <button type="submit">Đăng nhập</button>
+                                        </div>
+                                    </div>
+                                
+                                    <h4>Chưa có tài khoản?</h4>
+                                    <div class="regis">
+                                        <ul>
+                                            <li>
+                                                <a href="#"><p>Đăng ký người nhà bệnh nhân</p></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><p>Đăng ký người chăm sóc</p></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
+                                </div>
+                            </form>
+                        </div>
                     </li>
+                    <script>
+                        var modal = document.getElementById('id01');
+                        var modal2 = document.getElementById('id02');
+
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                            if (event.target == modal2) {
+                                modal2.style.display = "none";
+                            }
+                        }
+                    </script>
                 </ul>
+                <!-- <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item" target="nav-item" class="orange">
+                        <a  href="index.html" aria-current="page">Trang chủ</a><span
+                    </li>
+                    <li class="nav-item" target="nav-item">
+                        <a  href="patient.html">Tìm bệnh nhân</a>
+                    </li>
+                    <li class="nav-item" target="nav-item">
+                        <a  href="care.html">Tìm người chăm sóc</a>
+                    </li>
+                    <li class="nav-item" target="nav-item">
+                        <a " href="news.html">Tin tức</a>
+                    </li>
+                    <li class="nav-item" target="nav-item">
+                        <a  href="contact.html">Liên hệ</a>
+                    </li>
+                    <li class="btn dark">
+                        <a  href="login.html" id="login">Đăng nhập</a>
+                    </li>
+                </ul> -->
             </nav>
         </div>
     </header>
@@ -98,25 +213,25 @@
     
                     <ul>
                         <li>
-                            <img src="/image/Email.svg" alt="">
+                            <img src="image/Email.svg" alt="">
                             chamsoc@nguoibenh.com.vn
                         </li>
                         
                         <li>
-                            <img src="/image/Phone.svg" alt="">
+                            <img src="image/Phone.svg" alt="">
                             0983471417
                         </li>
     
                         <li>
-                            <img src="/image/locate.svg" alt="">
+                            <img src="image/locate.svg" alt="">
                             208 Giải Phóng, Hai Bà Trưng, Hà Nội
                         </li>
                     </ul>
 
                     <div class="social">
-                        <a href="#"><img src="/image/facebook.png" alt=""></a>
-                        <a href="#"><img src="/image/Twitter.png" alt=""></a>
-                        <a href="#"><img src="/image/Instagram.png" alt=""></a>
+                        <a href="#"><img src="image/facebook.png" alt=""></a>
+                        <a href="#"><img src="image/Twitter.png" alt=""></a>
+                        <a href="#"><img src="image/Instagram.png" alt=""></a>
                     </div>
 
                     <form action="#">

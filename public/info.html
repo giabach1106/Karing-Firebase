@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@300;800&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="info.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="wrapper">
+            <nav>
+                <a href="index.html"><div class="logo">Chăm Sóc Đột Quỵ - Karing.</div></a>
+
+                <ul>
+                    <li>
+                        <a href="index.html" class="orange">Trang Chủ</a>
+                    </li>
+                    
+                    <li>
+                        <a href="patient.html">Tìm Bệnh Nhân</a>
+                    </li>
+
+                    <li>
+                        <a href="care.html">Tìm Người Chăm Sóc</a>
+                    </li>
+
+                    <li>
+                        <a href="news.html">Tin Tức</a>
+                    </li>
+
+                    <li>
+                        <button onclick="document.getElementById('id02').style.display='block'"class="btn none">Liên Hệ</button>
+
+                        <div id="id02" class="modal ver22">
+                            
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content ver2 animate" action="#"> 
+                                <div class="popup2">
+                                    <h1>Liên hệ chúng tôi</h1>
+                                    <div class="regis">
+                                        <ul>
+                                            <li>
+                                                <img src="image/Email.svg" alt="">
+                                                chamsoc@nguoibenh.com.vn
+                                            </li>
+                                            
+                                            <li>
+                                                <img src="image/Phone.svg" alt="">
+                                                0983471417
+                                            </li>
+                        
+                                            <li>
+                                                <img src="image/locate.svg" alt="">
+                                                208 Giải Phóng, Hai Bà Trưng, Hà Nội
+                                            </li>
+                                        </ul>
+
+                                        <div class="social">
+                                            <a href="#"><img src="image/facebook.png" alt=""></a>
+                                            <a href="#"><img src="image/Twitter.png" alt=""></a>
+                                            <a href="#"><img src="image/Instagram.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Hủy</button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+
+                    <li>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="btn dark">Đăng nhập</button>
+
+                        <div id="id01" class="modal">
+                            
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <form class="modal-content animate" action="#"> 
+                                <div class="popup">
+                                    <h1>Đăng Nhập</h1>
+                                    <div class="container">
+                                        <div class="type">
+                                            <div class="gmail">
+                                                <input type="text" placeholder="Nhập gmail" required>
+                                            </div>
+                                            <div class="psw">
+                                                <input type="password" placeholder="Nhập mật khẩu" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="l3">
+                                            <a href="#"><span>Quên mật khẩu?</span></a>
+
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Ghi nhớ tôi
+                                            </label>
+                                        </div>
+
+                                        <div class="login">
+                                            <button type="submit">Đăng nhập</button>
+                                        </div>
+                                    </div>
+                                
+                                    <h4>Chưa có tài khoản?</h4>
+                                    <div class="regis">
+                                        <ul>
+                                            <li>
+                                                <a href="#"><p>Đăng ký người nhà bệnh nhân</p></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><p>Đăng ký người chăm sóc</p></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy</button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <script>
+                        var modal = document.getElementById('id01');
+                        var modal2 = document.getElementById('id02');
+
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                            if (event.target == modal2) {
+                                modal2.style.display = "none";
+                            }
+                        }
+                    </script>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="in4">
+        <div class="wrapper">
+            <div class="ups">
+                <h1 class="blue">Những thông tin quan trọng về căn bệnh đột quỵ</h1>
+            </div>
+            
+            <div class="articles">
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>1. Đột quỵ là gì:</h3></button>
+                        <div class="content">
+                            <p>
+                                Đột quỵ là tình trạng quá trình cung cấp máu lên não bị gián đoạn dẫn đến thiếu oxy, kết quả là não bị tổn <br>
+                                thương và mất chức năng. Đột quỵ xảy ra do 2 nguyên nhân là thiếu máu cục bộ (do cục máu đông gây tắc động <br>
+                                mạch cung cấp máu cho não, nguyên nhân thường xuyên nhất gây đột quỵ) và xuất huyết não (khi một mạch <br>
+                                máu não bị vỡ). Đột quỵ có thể gây ra tổn thương vĩnh viễn, bao gồm tê liệt một phần và suy giảm khả năng nói,<br>
+                                hiểu và ghi nhớ. Mức độ và vị trí của tổn thương quyết định mức độ nghiêm trọng của đột quỵ, có thể từ nhẹ <br>
+                                đến nặng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>2. Nguyên nhân đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>Hai nguyên nhân chủ yếu gây nên hiện tượng đột quỵ là do thiếu máu cục bộ (tắc nghẽn động mạch) hoặc do xuất huyết não (mạch máu bị vỡ). <br> <br>
+                                Các yếu tố nguy cơ bao gồm:</h5>
+                            <ul>
+                                <li>
+                                    Người bị các bệnh lý tim mạch như hở van tim, rung tâm nhĩ, nhịp tim không đều, suy tim,…;
+                                </li>
+
+                                <li>
+                                    Người bị tăng huyết áp;
+                                </li>
+
+                                <li>
+                                    Người bị tiểu đường;
+                                </li>
+
+                                <li>
+                                    Người bị rối loạn Lipid máu;
+                                </li>
+
+                                <li>
+                                    Tiền sử cá nhân hoặc gia đình đã từng bị đột quỵ, thiếu máu não thoáng qua hoặc bệnh tim;
+                                </li>
+
+                                <li>
+                                    Lạm dụng các chất kích thích như uống nhiều rượu, sử dụng ma túy;
+                                </li>
+
+                                <li>
+                                    Người hút thuốc lá chủ động hoặc hít phải khói thuốc lá thụ động, gặp tình trạng khói thuốc lá dẫn đến mỡ tích tụ <br>
+                                    trong động mạch, tăng nguy cơ máu đông;
+                                </li>
+
+                                <li>
+                                    Người thừa cân, béo phì, ít vận động tập thể dục;
+                                </li>
+
+                                <li>
+                                    Chế độ ăn uống không hợp lý, lượng Cholesterol cao;
+                                </li>
+
+                                <li>
+                                    Về tuổi tác, người trong nhóm tuổi từ 55 tuổi trở lên có nguy cơ cao hơn;
+                                </li>
+
+                                <li>
+                                    Phụ nữ có nguy cơ bị đột quỵ thấp hơn so với nam giới;
+                                </li>
+
+                                <li>
+                                    Việc sử dụng thuốc tránh thai hay các liệu pháp điều chỉnh hormone, thay đổi nội tiết tố <br>
+                                    cũng làm tăng nguy cơ gây bệnh.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>3. Nhận biết đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>Thời gian vàng trong điều trị đột quỵ là từ 4-6 tiếng, do đó việc nhận biết sớm được các triệu chứng của đột quỵ <br>
+                                là vô cùng quan trọng. Người bị đột quỵ thường gặp phải các tình trạng như:</h5>
+                            
+                            <ul>
+                                <li>
+                                    Khuôn mặt: Dấu hiệu dễ nhìn thấy là mặt bệnh nhân bị méo. Nếu nghi ngờ hãy yêu cầu bệnh nhân cười vì méo có thể rõ hơn.
+                                </li>
+
+                                <li>
+                                    Tay: Tay bị liệt, cũng có thể có diễn tiến từ từ như tê một bên tay, vẫn điều khiển được tay nhưng kém chính xác. <br>
+                                    Ngoài tay còn có một số dấu hiệu ở chân như nhấc chân không lên, đi rớt dép,….
+                                </li>
+
+                                <li>
+                                    Lời nói: Rõ nhất là một số người đột quỵ bị “á khẩu” hay nói đớ.
+                                </li>
+                            </ul>
+
+                            <h5>Ngoài ra có những triệu chứng ở người bị đột quỵ có thể kể đến như:</h5>
+                            <ul>
+                                <li>
+                                    Lẫn lộn, sảng, hôn mê;
+                                </li>
+
+                                <li>
+                                    Thị lực giảm sút, hoa mắt;
+                                </li>
+
+                                <li>
+                                    Chóng mặt, người mất thăng bằng, không thể đứng vững;
+                                </li>
+
+                                <li>
+                                    Đau đầu;
+                                </li>
+
+                                <li>
+                                    Buồn nôn, nôn ói,….
+                                </li>
+                            </ul>
+
+                            <h5>Khi bắt gặp những triệu chứng trên, hãy gọi ngay cho số cấp cứu 115 hoặc đưa bệnh nhân đến cơ sở y tế gần <br>
+                                nhất để được cấp cứu kịp thời.</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>4. Phương pháp chẩn đoán đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>
+                                Đột quỵ thường diễn ra một cách đột ngột, nhanh chóng nhưng để lại hậu quả nặng nề. Do đó, người bệnh cần <br>
+                                được đưa đến bệnh viện để được can thiệp càng sớm càng tốt, kể từ khi có những dấu hiệu bệnh đầu tiên.
+                            </h5>
+                            <h6>a, Bệnh sử</h6>
+                            <ul>
+                                <li>
+                                    Khởi phát đột ngột;
+                                </li>
+
+                                <li>
+                                    Yếu liệt nửa người;
+                                </li>
+
+                                <li>
+                                    Méo miệng, nói ngọng,…
+                                </li>
+                            </ul>
+
+                            <h6>b, Lâm sàng</h6>
+                            <ul>
+                                <li>
+                                    Liệt VII trung ương, nói khó;
+                                </li>
+
+                                <li>
+                                    Hội chứng liệt nửa người;
+                                </li>
+
+                                <li>
+                                    Tê hay dị cảm tay và chân cùng bên;
+                                </li>
+
+                                <li>
+                                    Rối loạn ngôn ngữ;
+                                </li>
+
+                                <li>
+                                    Rối loạn thị giác;
+                                </li>
+
+                                <li>
+                                    Đau đầu, chóng mặt;
+                                </li>
+
+                                <li>
+                                    Rối loạn tri giác: Ngủ gà, lơ mơ, hôn mê.
+                                </li>
+                            </ul>
+
+                            <h6>c, Kiểm tra cận lâm sàng</h6>
+                            <ul>
+                                <li>
+                                    Xét nghiệm công thức máu, đông máu toàn bộ, đường huyết, điện giải đồ máu, chức năng thận, men gan, men tim, bilan Lipid máu.
+                                </li>
+
+                                <li>
+                                    Đo điện tâm đồ.
+                                </li>
+
+                                <li>
+                                    X- quang ngực thẳng.
+                                </li>
+
+                                <li>
+                                    Chụp điện toán cắt lớp sọ não (CT scan) không cản quang: Có thể thực hiện nhanh, phân biệt rõ giữa đột quỵ xuất huyết não với thiếu máu não cục bộ cấp.
+                                </li>
+
+                                <li>
+                                    Chụp CT scan mạch máu não với thuốc cản quang (CTA): Giúp khảo sát hình ảnh của toàn bộ động mạch não nhằm phát hiện các bất thường như: Hẹp, phình mạch hay bóc tách mạch nội sọ và ngoài sọ.
+                                </li>
+
+                                <li>
+                                    Chụp cộng hưởng từ não (MRI).
+                                </li>
+
+                                <li>
+                                    Nhồi máu não tuần hoàn sau.
+                                </li>
+
+                                <li>
+                                    Khi CT scan não không ghi nhận tổn thương hoặc hình ảnh tổn thương không tương xứng với lâm sàng.
+                                </li>
+
+                                <li>
+                                    Siêu âm động mạch cảnh: Xác định tình trạng tắc, hẹp động mạch cảnh và động mạch đốt sống đoạn ngoài sọ.
+                                </li>
+
+                                <li>
+                                    Siêu âm tim để tìm bất thường tại tim có thể là nguyên nhân gây ra đột quy.
+                                </li>
+
+                                <li>
+                                    Siêu âm Doppler xuyên sọ (TCD): Xác định các tình trạng hẹp, tắc mạch máu hoặc tái thông tại các mạch máu lớn trong sọ.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>5. Phòng ngừa đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>Nhằm ngăn ngừa nguy cơ bị tai biến mạch máu não, cần có lối sống và thói quen ăn uống khoa học:</h5>
+                            <ul>
+                                <li>
+                                    Không thức khuya, ngủ đúng giờ, ngủ đủ giấc và chú ý đến chất lượng giấc ngủ;
+                                </li>
+
+                                <li>
+                                    Tập thể dục thường xuyên, tối thiểu 30 phút/lần tập và duy trì 3-4 lần/tuần để tăng cường sức khỏe bản thân;
+                                </li>
+
+                                <li>
+                                    Có chế độ ăn uống hợp lý, không dùng nhiều đồ chiên xào, thức ăn nhanh, đồ dầu mỡ nhiều cholesterol và chất béo, thức uống có cồn, nước có ga, rượu bia,… Ăn nhiều rau xanh, trái cây, thịt trắng, hải sản, trứng, ngũ cốc và các loại đậu,…;
+                                </li>
+
+                                <li>
+                                    Hạn chế rượu bia và các chất kích thích.
+                                </li>
+
+                                <li>
+                                    Hạn chế tắm đêm vì đây cũng là một yếu tố làm tăng nguy cơ đột quỵ;
+                                </li>
+
+                                <li>
+                                    Kiểm tra sức khỏe định kỳ, tầm soát đột quỵ, đặc biệt là lượng cholesterol và huyết áp, tim mạch, tiểu đường,…;
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>6. Biến chứng của bệnh đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>Đột quỵ có thể dẫn đến tử vong hoặc nếu may mắn sống sót cũng để lại nhiều biến chứng nặng nề đối với người bệnh. Tùy theo thời gian người bị đột quỵ được phát hiện, đưa vào bệnh viện và điều trị mà mức độ tổn thương hệ thần kinh sẽ khác nhau.
+                                Khi bị đột quỵ, càng chậm trễ trong việc điều trị cấp cứu thì hệ thần kinh càng bị tổn hại nặng nề, gây nên hậu quả nghiêm trọng, thời gian phục hồi lâu và thậm chí là không thể phục hồi. Thông thường, phải mất ít nhất 30 ngày để người bị tai biến mạch máu não có thể phục hồi. Thậm chí, trong một số trường hợp, biến chứng có thể gây thương tổn vĩnh viễn. <br>
+                                Một số biến chứng thường gặp sau khi bị đột quỵ bao gồm:
+                            </h5>
+                            <ul>
+                                <li>
+                                    Bị liệt (1/2 người hoặc hết tứ chi);
+                                </li>
+
+                                <li>
+                                    Khả năng vận động yếu, khó cử động tay chân;
+                                </li>
+
+                                <li>
+                                    Mất ngôn ngữ, nói ngọng, gặp khó khăn trong giao tiếp;
+                                </li>
+
+                                <li>
+                                    Gặp các vấn đề thị giác;
+                                </li>
+
+                                <li>
+                                    Các vấn đề tâm lý như trầm cảm, rối loạn cảm xúc,…;
+                                </li>
+
+                                <li>
+                                    Trường hợp nặng sẽ dẫn đến tử vong hoặc sống thực vật.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>7. Cách điều trị đột quỵ:</h3></button>
+                        <div class="content">
+                            <p>Nhìn chung, mục đích chính của việc điều trị tai biến mạch máu não là giảm tỷ lệ tử vong, hạn chế tối đa các biến chứng nghiêm trọng và lâu dài. Nguyên tắc chung khi điều trị các trường hợp đột quỵ chính là: Điều trị cấp cứu, nhanh chóng và chính xác, hạn chế ổ tổn thương lan rộng, tối ưu hóa tình trạng thần kinh, đảm bảo tưới máu não, phòng ngừa các biến chứng có thể xảy ra, giúp người bệnh phục hồi chức năng và phòng ngừa tối đa nguy cơ tái phát bệnh đột quỵ.
+                                Tùy theo nguyên nhân đột quỵ là do chảy máu não hay nhồi máu não mà hình thức điều trị đột quỵ có thể khác nhau.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>8. Cần làm gì khi phát hiện người đang bị đột quỵ?</h3></button>
+                        <div class="content">
+                            <h5>Hướng dẫn sơ cứu cho người bị tai biến mạch máu não:</h5>
+                            <ul>
+                                <li>
+                                    Gọi xe cấp cứu ngay lập tức;
+                                </li>
+
+                                <li>
+                                    Tuyệt đối giữ cho bệnh nhân không bị té ngã;
+                                </li>
+
+                                <li>
+                                    Không tự ý điều trị như đánh gió, bấm huyệt, châm cứu, cho bệnh nhân uống thuốc huyết áp hay bất kỳ loại thuốc nào;
+                                </li>
+
+                                <li>
+                                    Theo dõi các biểu hiện của bệnh nhân như co giật, méo miệng, nôn mửa, chóng mặt, mất thăng bằng, loạn trí,…;
+                                </li>
+
+                                <li>
+                                    Để bảo vệ đường thở, nên đặt bệnh nhân nằm nghiêng và không cho bệnh nhân ăn uống gì.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>9. Chế độ dinh dưỡng:</h3></button>
+                        <div class="content">
+                            <h5>Khi xây dựng chế độ dinh dưỡng để phòng ngừa đột quỵ và chế độ dinh dưỡng phục hồi sau đột quỵ, cần lưu ý:</h5>
+                            <ul>
+                                <li>
+                                    Cố gắng ăn nhiều rau củ, các loại trái cây.
+                                </li>
+
+                                <li>
+                                    Kiểm soát khẩu phần ăn, không ăn quá no dẫn đến lượng calo nạp vào tăng, hàm lượng chất béo hấp thụ cao, tăng nguy cơ béo phì.
+                                </li>
+
+                                <li>
+                                    Hạn chế ăn chất béo bão hòa và chất béo chuyển hóa.
+                                </li>
+
+                                <li>
+                                    Ưu tiên các nguồn protein ít chất béo.
+                                </li>
+
+                                <li>
+                                    Cố gắng giảm hàm lượng natri trong mỗi khẩu phần ăn.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>10. Cách chăm sóc bệnh nhân đột quỵ:</h3></button>
+                        <div class="content">
+                            <h5>
+                                Giai đoạn chăm sóc và tiến hành phục hồi chức năng đóng vai trò rất quan trọng trong <br>
+                                quá trình điều trị bệnh đột quỵ. Người nhà phải tạo điều kiện cho bệnh nhân được sống trong <br>
+                                một môi trường vận động phong phú. Bên cạnh đó, bạn cũng cần nắm rõ những lưu ý chăm sóc người đột quỵ, <br>
+                                có thể kể đến những nguyên tắc sau:
+                            </h5>
+
+                            <ul>
+                                <li>
+                                    Phòng ngừa các biến chứng về hô hấp.
+                                </li>
+
+                                <li>
+                                    Khuyến khích bệnh nhân đặt tư thế trị liệu.
+                                </li>
+
+                                <li>
+                                    Vận động vào buổi sáng sớm.
+                                </li>
+
+                                <li>
+                                    Luôn duy trì tầm vận động.
+                                </li>
+
+                                <li>
+                                    Xử lý tình trạng yếu hoặc liệt nửa người.
+                                </li>
+
+                                <li>
+                                    Xử lý sự mất cảm giác.
+                                </li>
+
+                                <li>
+                                    Tạo thuận chức năng của chi trên.
+                                </li>
+
+                                <li>
+                                    Tăng cường lực cho các cơ.
+                                </li>
+
+                                <li>
+                                    Cải sự thăng bằng, dáng đi và cách di chuyển.
+                                </li>
+
+                                <li>
+                                    Khuyến khích người bệnh nên độc lập trong các sinh hoạt hàng ngày.
+                                </li>
+
+                                <li>
+                                    Xử lý và phòng ngừa những biến chứng hay xảy ra của đột quỵ.
+                                </li>
+
+                            </ul>
+
+                            <h6>a, Phòng ngừa các biến chứng thuộc chức năng hô hấp <br>
+                                Đây là một trong những lưu ý chăm sóc người đột quỵ mà bạn nên nhớ kỹ. Nguyên tắc này bao gồm:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Cho bệnh nhân lăn/trở mình thường xuyên.
+                                </li>
+
+                                <li>
+                                    Chú ý các tư thế khi trị liệu (không khuyến khích nằm ngửa vì nó ảnh hưởng nhiều đến sự lưu thông của không khí).
+                                </li>
+
+                                <li>
+                                    Cho bệnh nhân thường xuyên tập luyện các bài hít thở sâu.
+                                </li>
+
+                                <li>
+                                    Nếu người bệnh đã ổn định nội khoa rồi thì có thể thực hiện các vận động di chuyển.
+                                </li>
+                            </ul>
+
+                            <h6>b, Đảm bảo giữ tư thế trị liệu đúng <br>
+                                Những lưu ý chăm sóc người đột quỵ bao gồm việc giữ cơ thế bệnh nhân luôn trong tình trạng đúng tư thế. Điều này sẽ giúp thúc đẩy sự hồi phục tối ưu của bệnh nhân, bạn nên thực hiện những việc sau đây:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Hỗ trợ bệnh nhân kiểm soát lực cơ.
+                                </li>
+
+                                <li>
+                                    Tăng các nhận biết về không gian xung quanh.
+                                </li>
+
+                                <li>
+                                    Thay đổi tư thế người bệnh bằng cách lăn trở mỗi 2 giờ/lần để tránh gây loét.
+                                </li>
+                            </ul>
+
+                            <h6>c, Tăng cường vận động cho bệnh nhân <br>
+                                Trong giai đoạn điều trị sau đột quỵ, bệnh nhân có thể mắc các biến chứng như: nhiễm trùng đường hô hấp, yếu cơ, loãng xương, giảm tầng vận động các khớp hoặc các biến chứng về huyết khối,… Một trong những lưu ý chăm sóc người đột quỵ là tạo điều kiện cho người bệnh thực hiện các vận động càng nhiều càng tốt khi đã kiểm soát được các yếu tố bệnh nội khoa. Cụ thể như sau:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Cho bệnh nhân lăn trở trên giường.
+                                </li>
+
+                                <li>
+                                    Kết hợp ngồi dậy trên giường.
+                                </li>
+
+                                <li>
+                                    Chuyển từ tư thế nằm sang ngồi và thòng chân ở mép giường.
+                                </li>
+
+                                <li>
+                                    Chuyển sang ngồi bên ngoài giường.
+                                </li>
+
+                                <li>
+                                    Cuối cùng là đứng và đi.
+                                </li>
+                            </ul>
+
+                            <h6>d, Xử lý biến chứng liệt nửa người trong giai đoạn đầu thường giảm trương lực cơ <br>
+                                Cụ thể, bệnh nhân nên được tập các động tác sau đây:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Bắt đầu từ vận động thụ động đúng tư thế để giảm các biến chứng như co rút cơ, chấn thương bên liệt,… và giúp trương lực có thể bình thường trở lại.
+                                </li>
+
+                                <li>
+                                    Dùng tay lành để chủ động tập vận động cho tay liệt.
+                                </li>
+
+                                <li>
+                                    Khuyến khích tập luyện các bài như chải đầu, vươn tay lấy cốc,…
+                                </li>
+                            </ul>
+
+                            <h6>e, Tạo thuận chức năng của chi trên <br>
+                                Để khuyến khích cho bệnh nhân độc lập và tạo động lực để họ phục hồi nhanh chóng hơn thì tạo thuận chức năng cho chi trên là một trong những lưu ý chăm sóc người đột quỵ. Cụ thể như sau:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Hướng dẫn bệnh nhân tập các bài vận động tay ở tư thế ngồi hoặc đứng.
+                                </li>
+
+                                <li>
+                                    Đến cơ sở y tế để kích thích điện thần kinh cơ.
+                                </li>
+
+                                <li>
+                                    Tập các bài tập thực tế ảo cho bàn tay và cánh tay bên bị liệt để giúp chúng quay về với trạng thái bình thường.
+                                </li>
+
+                                <li>
+                                    Nhờ sự trợ giúp của robot tác động lên vai và khuỷu tay (bên bị liệt).
+                                </li>
+                            </ul>
+
+                            <h6>f, Làm mạnh cơ<br>
+                                Những lưu ý chăm sóc người đột quỵ bao gồm việc làm mạnh các cơ để phục hồi chức năng vận động sau đột quỵ. Cụ thể như sau:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Tăng số lần lặp của các hoạt động chịu được sức nặng (như chuyển từ tư thế ngồi sang đứng) để tăng lực cơ.
+                                </li>
+                                
+                                <li>
+                                    Thực hiện tập với tạ.
+                                </li>
+
+                                <li>
+                                    Tập đạp xe tại chỗ hoặc các bài tập đề kháng khác.
+                                </li>
+
+                                <li>
+                                    Tập mạnh các các cơ chỉ bên chân liệt hoặc cả hai chân để tăng sức cản vận động và tăng sức mạnh của các cơ, từ đó góp phần cải thiện sự đối xứng, chiều dài và nhịp bước chân,…
+                                </li>
+                            </ul>
+
+                            <h6>g, Cải thiện dáng đi và sự thăng bằng <br>
+                                Cần khuyến khích bệnh nhân tập luyện cải thiện dáng đi và cách giữ thăng bằng khi di chuyển để hỗ trợ về mặt tâm lý và giúp người bệnh có động lực trong quá trình điều trị. Lưu ý này bao gồm:
+                            </h6>
+                            <ul>
+                                <li>
+                                    Tập cho người bệnh giữ thăng bằng.
+                                </li>
+
+                                <li>
+                                    Điều chỉnh dáng đi cho bệnh nhân.
+                                </li>
+
+                                <li>
+                                    Có thể dùng các dụng cụ trợ giúp (nẹp AFO, gậy chống, dụng cụ chỉnh hình cho cổ - bàn chân).
+                                </li>
+
+                                <li>
+                                    Cho người bệnh di chuyển lên/xuống cầu thang theo từng bước, nên đi trên nhiều bề mặt khác nhau để làm quen địa hình.
+                                </li>
+
+                                <li>
+                                    Tập nâng trọng lượng cơ thể với máy đi bộ.
+                                </li>
+
+                                <li>
+                                    Tập luyện dáng đi nhờ vào sự trợ giúp của robot.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="inf">
+                        <button class="collapsible"><h3>11. Những câu hỏi thường gặp về bệnh đột quỵ:</h3></button>
+                        <div class="content">
+                            <h6>a, Tắm đêm có dẫn đến đột quỵ hay không? Đột quỵ có phải do tắm khuya?</h6>
+                            <p>
+                                KHÔNG. Tắm đêm không phải là nguyên nhân trực tiếp gây ra đột quỵ nhưng sẽ là yếu tố xúc tác, <br>
+                                thúc đẩy gián tiếp. Do đó không nên tắm đêm, đặc biệt là sau 23h. Bởi đây là thời điểm nhiệt độ xuống <br>
+                                thấp nhất trong ngày, đồng thời huyết áp lên cao. Sự thay đổi nhiệt độ, trạng thái và huyết áp cơ thể <br>
+                                sẽ ảnh hưởng đến sự lưu thông của máu, các mạch máu bị co lại và rất dễ gây thiếu máu não cục bộ <br>
+                                dẫn tới tai biến mạch máu não.
+                            </p>
+
+                            <h6>b, Tại sao đột quỵ ngày càng trẻ hóa?</h6>
+                            <p>
+                                Người trẻ ngày nay với lối sống thiếu khoa học trong chế độ ăn uống và sinh hoạt như: <br>
+                                Uống nhiều bia rượu, hút thuốc, sử dụng chất kích thích, ít vận động, làm tăng nguy cơ mỡ <br>
+                                máu, béo phì, lượng cholesterol quá cao. Thêm vào đó, ngày càng nhiều bạn trẻ mắc các bệnh lý tim mạch <br>
+                                và huyết áp cao : hai nguyên nhân hàng đầu dẫn đến đột quỵ.
+                            </p>
+
+                            <h6>c, Thực hư về thử thách đứng một chân để chẩn đoán đột quỵ như thế nào?</h6>
+                            <p>
+                                Thử thách này bắt nguồn từ một nghiên cứu tại Nhật Bản vào năm 2014. Tuy nhiên, nghiên cứu này chỉ được <br>
+                                khảo sát ở một nhóm nhỏ đối tượng trong độ tuổi trên 60 và có các bệnh lý nền như đái tháo đường, <br>
+                                tăng huyết áp. Do đó, nghiên cứu này cùng thử thách đứng một chân để chẩn đoán đột quỵ cần được thử nghiệm lại <br>
+                                với nhóm đối tượng đa dạng và mở rộng hơn. Để có sự chẩn đoán chính xác đột quỵ, người bệnh cần được thăm khám <br>
+                                và thực hiện các xét nghiệm, chỉ định cận lâm sàng chuyên sâu, đặc biệt là tầm soát các bệnh lý nền.
+                            </p>
+
+                            <h6>d, Đột quỵ có di truyền không?</h6>
+                            <p>
+                                Đột quỵ không phải là một bệnh lý có tính di truyền. Tuy nhiên, những nguyên nhân <br>
+                                dẫn đến đột quỵ như cao huyết áp, tiểu đường, rối loạn mỡ trong máu,… thường mang yếu tố gia đình. <br>
+                                Do đó, những gia đình có người bị đột quỵ thì người thân cũng có nguy cơ mắc bệnh cao hơn.
+                            </p>
+
+                            <h6>e, Đột quỵ có cứu được không?</h6>
+                            <p>
+                                Theo Tổ chức Y tế thế giới, mỗi năm có khoảng 6,5 triệu người tử vong do đột quỵ. <br>
+                                Đây cũng là nguyên nhân gây tử vong cao thứ 2 trên thế giới, trung bình có 1 ca tử vong do đột quỵ sau mỗi <br>
+                                6 giây và cứ 6 người thì có 1 người bị đột quỵ. <br>
+                                <br>
+                                Tuy nhiên, không phải trường hợp bị đột quỵ nào cũng dẫn đến tử vong. Nếu người bị đột quỵ <br>
+                                được phát hiện và can thiệp kịp thời ngay khi có những dấu hiệu đầu tiên hoặc được tầm soát, <br>
+                                chẩn đoán để có biện pháp phòng tránh từ đầu thì có thể hạn chế nguy cơ tử vong hoặc gặp các biến chứng nguy hiểm. <br>
+                                <br>
+                                Phương pháp hiệu quả nhất giúp ngăn ngừa tối đa các biến chứng nguy hiểm của đột quỵ chính <br>
+                                là người bệnh được phát hiện sớm và điều trị cấp cứu kịp thời.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="wrapper">
+            <div class="links-container">
+                <div class="links">
+                    <h3>Về chúng tôi</h3>
+    
+                    <ul>
+                        <li>
+                            <a href="#">Thông tin</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">Chính sách bảo mật</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">Điều khoản sử dụng</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="links">
+                    <h3>Trợ giúp</h3>
+    
+                    <ul>
+                        <li>
+                            <a href="#">Đăng nhập</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">Tạo hồ sơ</a>
+                        </li>
+    
+                        <li>
+                            <a href="#">Kết nối</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="links">
+                    <h3>Liên hệ chúng tôi</h3>
+    
+                    <ul>
+                        <li>
+                            <img src="image/Email.svg" alt="">
+                            chamsoc@nguoibenh.com.vn
+                        </li>
+                        
+                        <li>
+                            <img src="image/Phone.svg" alt="">
+                            0983471417
+                        </li>
+    
+                        <li>
+                            <img src="image/locate.svg" alt="">
+                            208 Giải Phóng, Hai Bà Trưng, Hà Nội
+                        </li>
+                    </ul>
+
+                    <div class="social">
+                        <a href="#"><img src="image/facebook.png" alt=""></a>
+                        <a href="#"><img src="image/Twitter.png" alt=""></a>
+                        <a href="#"><img src="image/Instagram.png" alt=""></a>
+                    </div>
+
+                    <form action="#">
+                        <input type="text" placeholder="Email Address">
+                        <button class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <p class="copyright">Bản quyền thuộc về nhóm tác giả Karing © 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+
+    <script src="scroll.js"></script>
+</body>
+</html>

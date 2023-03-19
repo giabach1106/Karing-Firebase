@@ -105,6 +105,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav a {
+    text-decoration: none;
+}
+
+
 /* search section */
 
 .ups {
